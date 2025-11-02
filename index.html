@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Cybersecurity & AI safety for SMEs. Secure cloud, apps, and ML pipelines — fast, clear, trusted." />
+  <meta property="og:title" content="NetCop Consultancy | Secure What Matters" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" />
+  <title>NetCop • Cybersecurity & AI Safety</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0b2447',
+            teal: '#2dd4bf',
+            amber: '#f59e0b',
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    .animate-fade-in-up { animation: fadeInUp 0.6s ease-out; }
+    .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+    .nav-mobile {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .nav-mobile.active { max-height: 400px; }
+    .scroll-smooth { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased">
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-2">
+        <div class="w-8 h-8 bg-teal rounded-lg flex items-center justify-center">
+          <i class="fas fa-shield-alt text-navy text-sm"></i>
+        </div>
+        <span class="font-bold text-xl text-navy">NetCop</span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#services" class="text-gray-700 hover:text-teal transition">Services</a>
+        <a href="#how" class="text-gray-700 hover:text-teal transition">How We Work</a>
+        <a href="#results" class="text-gray-700 hover:text-teal transition">Results</a>
+        <a href="#pricing" class="text-gray-700 hover:text-teal transition">Pricing</a>
+        <a href="#contact" class="bg-teal text-navy font-semibold px-5 py-2 rounded-xl hover:bg-teal/90 transition">
+          Book Call
+        </a>
+      </nav>
+      <button id="mobile-menu-btn" class="md:hidden text-navy">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="nav-mobile md:hidden bg-white border-t">
+      <nav class="flex flex-col px-6 py-4 space-y-4">
+        <a href="#services" class="text-gray-700 hover:text-teal transition">Services</a>
+        <a href="#how" class="text-gray-700 hover:text-teal transition">How We Work</a>
+        <a href="#results" class="text-gray-700 hover:text-teal transition">Results</a>
+        <a href="#pricing" class="text-gray-700 hover:text-teal transition">Pricing</a>
+        <a href="#contact" class="bg-teal text-navy font-semibold px-5 py-2 rounded-xl hover:bg-teal/90 transition text-center">
+          Book Call
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-center justify-center pt-20">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" 
+           alt="Secure data center" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-navy/70"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 text-center text-white">
+      <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        Secure Your Apps, Cloud, and AI — <span class="text-teal">Without the Noise</span>
+      </h1>
+      <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+        We help growing businesses prevent breaches, pass audits, and sleep at night. No jargon. No upsells.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contact" class="bg-teal text-navy font-bold px-8 py-3 rounded-xl hover:bg-teal/90 transition transform hover:scale-105">
+          Book Discovery Call
+        </a>
+        <a href="#audit" class="border-2 border-white text-white font-semibold px-8 py-3 rounded-xl hover:bg-white hover:text-navy transition">
+          Request Free Audit
+        </a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur px-6 py-3 rounded-full text-sm flex items-center gap-2">
+      <span class="w-2 h-2 bg-teal rounded-full animate-pulse"></span>
+      <span class="text-teal font-semibold">Live</span> <span id="threat-counter">2,847</span> threats blocked this week
+    </div>
+  </section>
+
+  <!-- PROBLEMS -->
+  <section class="py-24 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-4xl font-bold text-navy mb-6">You Don’t Need More Tools</h2>
+      <p class="text-xl text-gray-600 mb-16 max-w-3xl mx-auto">You need fewer breaches. We fix the 20% that causes 80% of risk.</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-teal/20 group">
+          <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-red-100 transition">
+            <i class="fas fa-cloud text-2xl text-red-500"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-navy">Cloud Exposure</h3>
+          <p class="text-gray-600">Open buckets, weak IAM, shadow IT — fixed in 48 hrs.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-teal/20 group">
+          <div class="w-14 h-14 bg-purple-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-purple-100 transition">
+            <i class="fas fa-robot text-2xl text-purple-500"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-navy">AI Pipeline Leaks</h3>
+          <p class="text-gray-600">Model data exfiltration, inference attacks — contained.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-teal/20 group">
+          <div class="w-14 h-14 bg-orange-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-orange-100 transition">
+            <i class="fas fa-fire-extinguisher text-2xl text-orange-500"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-navy">Incident Chaos</h3>
+          <p class="text-gray-600">No playbook? We contain in under 4 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-24 px-6 lg:px-12 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+    <div class="max-w-7xl mx-auto bg-white/95 backdrop-blur-sm rounded-3xl p-12">
+      <h2 class="text-4xl font-bold text-navy text-center mb-16">What We Do</h2>
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div class="group">
+          <div class="w-16 h-16 bg-teal/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-teal group-hover:scale-110 transition-all duration-300">
+            <i class="fas fa-shield-alt text-2xl text-teal group-hover:text-navy transition"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Cloud Security Audit</h3>
+          <p class="text-gray-600 mb-4">Full AWS/Azure/GCP review. 10-page report. 48 hrs.</p>
+          <a href="#contact" class="text-teal font-medium hover:underline inline-flex items-center gap-1">
+            Get Audit <i class="fas fa-arrow-right text-sm"></i>
+          </a>
+        </div>
+        <div class="group">
+          <div class="w-16 h-16 bg-teal/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-teal group-hover:scale-110 transition-all duration-300">
+            <i class="fas fa-brain text-2xl text-teal group-hover:text-navy transition"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">AI Safety Review</h3>
+          <p class="text-gray-600 mb-4">Secure training, inference, and data flows.</p>
+          <a href="#contact" class="text-teal font-medium hover:underline inline-flex items-center gap-1">
+            Start Review <i class="fas fa-arrow-right text-sm"></i>
+          </a>
+        </div>
+        <div class="group">
+          <div class="w-16 h-16 bg-teal/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-teal group-hover:scale-110 transition-all duration-300">
+            <i class="fas fa-bell text-2xl text-teal group-hover:text-navy transition"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Incident Response</h3>
+          <p class="text-gray-600 mb-4">24/7 retainer. Contain. Recover. Resume.</p>
+          <a href="#contact" class="text-teal font-medium hover:underline inline-flex items-center gap-1">
+            Get Retainer <i class="fas fa-arrow-right text-sm"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section id="how" class="py-24 px-6 lg:px-12 bg-navy text-white">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-16">How We Work</h2>
+      <div class="grid md:grid-cols-4 gap-8 relative">
+        <div class="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-teal/30"></div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-navy shadow-lg">1</div>
+          <h3 class="font-semibold text-xl mb-2">Discover</h3>
+          <p class="text-gray-300">30-min call. Map your risks.</p>
+        </div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-navy shadow-lg">2</div>
+          <h3 class="font-semibold text-xl mb-2">Assess</h3>
+          <p class="text-gray-300">1-week deep dive.</p>
+        </div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-navy shadow-lg">3</div>
+          <h3 class="font-semibold text-xl mb-2">Fix</h3>
+          <p class="text-gray-300">You approve. We deploy.</p>
+        </div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-navy shadow-lg">4</div>
+          <h3 class="font-semibold text-xl mb-2">Protect</h3>
+          <p class="text-gray-300">Ongoing. Transparent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="py-24 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-4xl font-bold text-navy text-center mb-16">Results That Speak</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gradient-to-br from-teal/5 to-white p-8 rounded-2xl border hover:shadow-xl transition-all duration-300 hover:scale-105">
+          <div class="mb-4"><i class="fas fa-check-circle text-3xl text-teal"></i></div>
+          <p class="text-3xl font-bold text-amber mb-2">98% Risk Down</p>
+          <p class="font-medium mb-1 text-navy">FinTech Scale-Up</p>
+          <p class="text-sm text-gray-600">Passed SOC 2 in 21 days.</p>
+        </div>
+        <div class="bg-gradient-to-br from-teal/5 to-white p-8 rounded-2xl border hover:shadow-xl transition-all duration-300 hover:scale-105">
+          <div class="mb-4"><i class="fas fa-dollar-sign text-3xl text-teal"></i></div>
+          <p class="text-3xl font-bold text-amber mb-2">$2.1M Saved</p>
+          <p class="font-medium mb-1 text-navy">AI Health Startup</p>
+          <p class="text-sm text-gray-600">Blocked model poisoning attack.</p>
+        </div>
+        <div class="bg-gradient-to-br from-teal/5 to-white p-8 rounded-2xl border hover:shadow-xl transition-all duration-300 hover:scale-105">
+          <div class="mb-4"><i class="fas fa-bolt text-3xl text-teal"></i></div>
+          <p class="text-3xl font-bold text-amber mb-2">3.5 Hr Recovery</p>
+          <p class="font-medium mb-1 text-navy">E-Commerce Brand</p>
+          <p class="text-sm text-gray-600">Zero data loss from ransomware.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-24 px-6 lg:px-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-4xl font-bold text-navy mb-6">Clear Pricing</h2>
+      <p class="text-xl text-gray-600 mb-16">No surprises. No contracts until you’re ready.</p>
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="bg-white p-8 rounded-2xl shadow hover:shadow-lg transition-all hover:scale-105 border border-gray-200">
+          <h3 class="text-2xl font-bold mb-4 text-navy">Audit</h3>
+          <p class="text-4xl font-bold text-teal mb-2">AED 2,500</p>
+          <p class="text-gray-600 mb-6">One-time. Full report + fixes.</p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> 48-hour turnaround</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> 10-page detailed report</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> Priority fixes included</li>
+          </ul>
+          <a href="#contact" class="block text-center border-2 border-teal text-teal py-3 rounded-xl font-semibold hover:bg-teal hover:text-navy transition">Get Started</a>
+        </div>
+        <div class="bg-navy text-white p-8 rounded-2xl shadow-xl transform scale-105 border-4 border-teal relative">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber text-navy text-xs font-bold px-4 py-1 rounded-full">MOST POPULAR</div>
+          <h3 class="text-2xl font-bold mb-4">Protect</h3>
+          <p class="text-4xl font-bold text-teal mb-2">AED 1,200<span class="text-lg">/mo</span></p>
+          <p class="mb-6">Ongoing + quarterly audits</p>
+          <ul class="space-y-2 text-sm mb-6">
+            <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> Continuous monitoring</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> Quarterly security audits</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> Priority support</li>
+          </ul>
+          <a href="#contact" class="block text-center bg-teal text-navy py-3 rounded-xl font-semibold hover:bg-teal/90 transition">Choose Plan</a>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow hover:shadow-lg transition-all hover:scale-105 border border-gray-200">
+          <h3 class="text-2xl font-bold mb-4 text-navy">Enterprise</h3>
+          <p class="text-4xl font-bold text-teal mb-2">Custom</p>
+          <p class="text-gray-600 mb-6">Dedicated team + SLAs</p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> Dedicated security team</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> Custom SLAs</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> 24/7 incident response</li>
+          </ul>
+          <a href="#contact" class="block text-center border-2 border-teal text-teal py-3 rounded-xl font-semibold hover:bg-teal hover:text-navy transition">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-32 px-6 lg:px-12 bg-navy text-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-6">Let’s Secure Your Business</h2>
+      <p class="text-xl mb-12">Free 30-minute call. No pitch. Just clarity.</p>
+      <form id="contact-form" action="https://formspree.io/f/your-email-here" method="POST" class="space-y-6 bg-white/10 backdrop-blur p-8 rounded-2xl text-left">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <input type="text" name="name" placeholder="Name *" class="w-full p-4 rounded-xl bg-white/10 border border-white/20 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/50 transition text-white placeholder-white/60" required />
+          </div>
+          <div>
+            <input type="email" name="email" placeholder="Email *" class="w-full p-4 rounded-xl bg-white/10 border border-white/20 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/50 transition text-white placeholder-white/60" required />
+          </div>
+        </div>
+        <div>
+          <input type="text" name="company" placeholder="Company" class="w-full p-4 rounded-xl bg-white/10 border border-white/20 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/50 transition text-white placeholder-white/60" />
+        </div>
+        <div>
+          <select name="service" class="w-full p-4 rounded-xl bg-white/10 border border-white/20 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/50 transition text-white">
+            <option value="" class="text-gray-900">Select Service (Optional)</option>
+            <option value="audit" class="text-gray-900">Cloud Security Audit</option>
+            <option value="ai-safety" class="text-gray-900">AI Safety Review</option>
+            <option value="incident-response" class="text-gray-900">Incident Response</option>
+            <option value="protect" class="text-gray-900">Ongoing Protection</option>
+          </select>
+        </div>
+        <div>
+          <textarea name="message" placeholder="Your biggest concern..." class="w-full p-4 rounded-xl bg-white/10 border border-white/20 h-32 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/50 transition text-white placeholder-white/60 resize-none"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-teal text-navy font-bold py-4 rounded-xl hover:bg-teal/90 transition transform hover:scale-105 flex items-center justify-center gap-2">
+          <i class="fas fa-calendar-check"></i> Book My Call
+        </button>
+        <p class="text-xs text-gray-400 text-center">We'll respond within 2 hours during business hours</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy text-white py-12 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 text-sm">
+      <div>
+        <div class="flex items-center space-x-2 mb-4">
+          <div class="w-8 h-8 bg-teal rounded-lg flex items-center justify-center">
+            <i class="fas fa-shield-alt text-navy text-sm"></i>
+          </div>
+          <span class="font-bold text-lg">NetCop</span>
+        </div>
+        <p class="text-gray-400">Cybersecurity & AI safety for growing businesses.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3">Services</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#services" class="hover:text-teal">Cloud Audit</a></li>
+          <li><a href="#services" class="hover:text-teal">AI Safety</a></li>
+          <li><a href="#services" class="hover:text-teal">Incident Response</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3">Company</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#" class="hover:text-teal">About</a></li>
+          <li><a href="#" class="hover:text-teal">Blog</a></li>
+          <li><a href="#" class="hover:text-teal">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3">Connect</h4>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-teal"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="text-gray-400 hover:text-teal"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-teal"><i class="fab fa-github"></i></a>
+        </div>
+        <p class="text-gray-400 mt-4 text-xs">© 2025 NetCop Consultancy. All rights reserved.</p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-8 pt-8 border-t border-white/10 text-center text-xs text-gray-500">
+      <a href="#" class="hover:text-teal">Privacy Policy</a> • 
+      <a href="#" class="hover:text-teal">Terms of Service</a>
+    </div>
+  </footer>
+
+  <!-- Enhanced Scripts -->
+  <script>
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = menuBtn.querySelector('i');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      menuIcon.classList.toggle('fa-bars');
+      menuIcon.classList.toggle('fa-times');
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        menuIcon.classList.add('fa-bars');
+        menuIcon.classList.remove('fa-times');
+      });
+    });
+
+    // Animated threat counter
+    let threatCount = 2847;
+    const counterElement = document.getElementById('threat-counter');
+
+    setInterval(() => {
+      threatCount += Math.floor(Math.random() * 3);
+      counterElement.textContent = threatCount.toLocaleString();
+    }, 5000);
+
+    // Scroll-based animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all major sections
+    document.querySelectorAll('section > div').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      observer.observe(el);
+    });
+
+    // Header scroll effect
+    let lastScroll = 0;
+    const header = document.querySelector('header');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+
+      if (currentScroll > 100) {
+        header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+      } else {
+        header.style.boxShadow = '';
+      }
+
+      lastScroll = currentScroll;
+    });
+
+    // Form validation and submission feedback
+    const contactForm = document.getElementById('contact-form');
+
+    contactForm.addEventListener('submit', (e) => {
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      submitBtn.disabled = true;
+    });
+
+    // Smooth scroll with offset for fixed header
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const headerOffset = 80;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
