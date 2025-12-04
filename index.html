@@ -28,92 +28,49 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes glow {
-      0%, 100% { box-shadow: 0 0 20px rgba(45, 212, 191, 0.3); }
-      50% { box-shadow: 0 0 40px rgba(45, 212, 191, 0.6); }
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0%,100% { opacity: 1 } 50% { opacity: 0.5 } }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes glow { 0%,100% { box-shadow: 0 0 20px rgba(45,212,191,0.15) } 50% { box-shadow: 0 0 36px rgba(45,212,191,0.28) } }
+    @keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+
     .animate-fade-in-up { animation: fadeInUp 0.6s ease-out; }
-    .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+    .animate-pulse { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
     .animate-slide-down { animation: slideDown 0.6s ease-out; }
     .animate-glow { animation: glow 3s ease-in-out infinite; }
     .animate-float { animation: float 3s ease-in-out infinite; }
-    .nav-mobile {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-    }
+
+    .nav-mobile { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
     .nav-mobile.active { max-height: 500px; }
     .scroll-smooth { scroll-behavior: smooth; }
-    .gradient-text {
-      background: linear-gradient(135deg, #2dd4bf 0%, #06b6d4 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .glass-effect {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-    .card-hover {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(45, 212, 191, 0.15);
-    }
-    .btn-modern {
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-    .btn-modern::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.2);
-      transition: left 0.5s ease;
-    }
-    .btn-modern:hover::before {
-      left: 100%;
-    }
+
+    .gradient-text { background: linear-gradient(135deg,#2dd4bf 0%,#06b6d4 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+
+    .glass-effect { background: rgba(255,255,255,0.85); backdrop-filter: blur(6px); border: 1px solid rgba(0,0,0,0.04); }
+    .card-hover { transition: all 0.28s cubic-bezier(0.4,0,0.2,1); }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(2,6,23,0.06); }
+
+    .btn-modern { position: relative; overflow: hidden; transition: all 0.25s ease; }
+    .btn-modern::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: rgba(255,255,255,0.18); transition: left 0.45s ease; }
+    .btn-modern:hover::before { left: 100%; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased">
 
   <!-- HEADER -->
-  <header class="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-navy via-navy to-navy/95 backdrop-blur-lg shadow-lg border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
       <a href="#" class="flex items-center space-x-2 hover:opacity-80 transition">
-        <div class="w-10 h-10 bg-gradient-to-br from-teal to-cyan-400 rounded-lg flex items-center justify-center shadow-lg shadow-teal/30">
-          <i class="fas fa-shield-alt text-white text-sm font-bold"></i>
+        <div class="w-10 h-10 bg-teal/20 rounded-lg flex items-center justify-center">
+          <i class="fas fa-shield-alt text-teal text-sm font-bold"></i>
         </div>
-        <span class="font-bold text-xl gradient-text">NetCop</span>
+        <span class="font-bold text-xl text-white">NetCop</span>
       </a>
       <nav class="hidden md:flex items-center space-x-1">
-        <a href="#services" class="text-gray-300 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/5">Services</a>
-        <a href="#how" class="text-gray-300 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/5">How We Work</a>
-        <a href="#results" class="text-gray-300 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/5">Results</a>
-        <a href="#pricing" class="text-gray-300 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/5">Pricing</a>
+        <a href="#services" class="text-white/70 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/10">Services</a>
+        <a href="#how" class="text-white/70 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/10">How We Work</a>
+        <a href="#results" class="text-white/70 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/10">Results</a>
+        <a href="#pricing" class="text-white/70 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/10">Pricing</a>
         <a href="#contact" class="btn-modern bg-gradient-to-r from-teal to-cyan-400 text-white font-semibold px-6 py-2.5 rounded-lg hover:shadow-lg hover:shadow-teal/40 ml-4">
           Book Call
         </a>
@@ -123,12 +80,12 @@
       </button>
     </div>
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="nav-mobile md:hidden glass-effect border-t border-white/10">
+    <div id="mobile-menu" class="nav-mobile md:hidden bg-navy/95 border-t border-white/10">
       <nav class="flex flex-col px-6 py-4 space-y-3">
-        <a href="#services" class="text-gray-300 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/5">Services</a>
-        <a href="#how" class="text-gray-300 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/5">How We Work</a>
-        <a href="#results" class="text-gray-300 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/5">Results</a>
-        <a href="#pricing" class="text-gray-300 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/5">Pricing</a>
+        <a href="#services" class="text-white/70 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/10">Services</a>
+        <a href="#how" class="text-white/70 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/10">How We Work</a>
+        <a href="#results" class="text-white/70 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/10">Results</a>
+        <a href="#pricing" class="text-white/70 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/10">Pricing</a>
         <a href="#contact" class="btn-modern bg-gradient-to-r from-teal to-cyan-400 text-white font-semibold px-6 py-2.5 rounded-lg hover:shadow-lg hover:shadow-teal/40 text-center block">
           Book Call
         </a>
@@ -137,67 +94,93 @@
   </header>
 
   <!-- HERO -->
-  <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-    <div class="absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" 
-           alt="Secure data center" class="w-full h-full object-cover">
-      <div class="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/70 to-navy/80"></div>
-      <!-- Animated gradient orbs -->
-      <div class="absolute top-20 right-10 w-96 h-96 bg-teal/10 rounded-full blur-3xl opacity-60 animate-float"></div>
-      <div class="absolute -bottom-20 left-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl opacity-40 animate-float" style="animation-delay: 1s;"></div>
+  <section class="relative min-h-screen flex items-center justify-center pt-32 overflow-hidden bg-gradient-to-br from-navy via-navy to-navy/90">
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute -top-40 -right-40 w-96 h-96 bg-teal/15 rounded-full blur-3xl opacity-80 animate-float"></div>
+      <div class="absolute top-1/3 -left-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl opacity-60 animate-float" style="animation-delay: 1.5s;"></div>
+      <div class="absolute -bottom-32 right-1/4 w-72 h-72 bg-teal/10 rounded-full blur-3xl opacity-50 animate-float" style="animation-delay: 0.7s;"></div>
+      <!-- Grid pattern overlay -->
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(0deg, rgba(45,212,191,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(45,212,191,0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 text-center text-white">
-      <div class="mb-6 inline-block">
-        <div class="glass-effect px-4 py-2 rounded-full flex items-center gap-2 text-sm">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 text-center">
+      <!-- Badge -->
+      <div class="mb-8 inline-block animate-fade-in-up">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-teal/30 bg-teal/10 backdrop-blur-sm">
           <span class="w-2 h-2 bg-teal rounded-full animate-pulse"></span>
-          <span>AI-Powered Security • Live Threat Detection</span>
+          <span class="text-teal font-medium text-sm">🚀 Trusted by 50+ Scale-ups</span>
         </div>
       </div>
-      <h1 class="text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in-up">
-        Secure Your Apps, Cloud, and <span class="gradient-text">AI — Without the Noise</span>
+
+      <!-- Main Heading -->
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-fade-in-up text-white">
+        Breach Prevention That Actually <span class="gradient-text">Works</span>
       </h1>
-      <p class="text-xl lg:text-2xl mb-10 max-w-3xl mx-auto opacity-90 leading-relaxed">
-        We help growing businesses prevent breaches, pass audits, and sleep at night. No jargon. No upsells.
+
+      <!-- Subheading -->
+      <p class="text-lg sm:text-xl lg:text-2xl mb-12 max-w-3xl mx-auto text-white/80 leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
+        Stop overspending on tools you don't need. We audit cloud, secure AI pipelines, and handle incidents—so your team sleeps better.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-        <a href="#contact" class="btn-modern bg-gradient-to-r from-teal to-cyan-400 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl hover:shadow-teal/50 text-lg">
-          Book Discovery Call
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up" style="animation-delay: 0.4s;">
+        <a href="#contact" class="btn-modern bg-gradient-to-r from-teal to-cyan-400 text-navy font-bold px-8 py-4 rounded-xl hover:shadow-2xl hover:shadow-teal/50 transition-all text-lg inline-block">
+          <i class="fas fa-calendar-check mr-2"></i> Get Free Audit
         </a>
-        <a href="#audit" class="btn-modern border-2 border-white text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 hover:border-teal transition text-lg">
-          Request Free Audit
+        <a href="#how" class="btn-modern border-2 border-teal/50 text-white font-semibold px-8 py-4 rounded-xl hover:border-teal hover:bg-teal/10 transition-all text-lg inline-block">
+          How It Works <i class="fas fa-arrow-right ml-2"></i>
         </a>
+      </div>
+
+      <!-- Trust Indicators -->
+      <div class="flex flex-col sm:flex-row gap-8 justify-center items-center max-w-2xl mx-auto">
+        <div class="text-center">
+          <p class="text-3xl font-bold text-teal mb-1">98%</p>
+          <p class="text-sm text-white/60">Risk Reduction</p>
+        </div>
+        <div class="hidden sm:block w-px h-12 bg-white/20"></div>
+        <div class="text-center">
+          <p class="text-3xl font-bold text-teal mb-1">48h</p>
+          <p class="text-sm text-white/60">Cloud Audit</p>
+        </div>
+        <div class="hidden sm:block w-px h-12 bg-white/20"></div>
+        <div class="text-center">
+          <p class="text-3xl font-bold text-teal mb-1">24/7</p>
+          <p class="text-sm text-white/60">Incident Support</p>
+        </div>
       </div>
     </div>
 
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 glass-effect px-6 py-3 rounded-full text-sm flex items-center gap-3">
-      <span class="w-3 h-3 bg-teal rounded-full animate-glow"></span>
-      <span class="text-teal font-semibold text-lg"><span id="threat-counter">2,847</span> threats blocked</span>
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 animate-bounce">
+      <p class="text-white/50 text-sm">Scroll to explore</p>
+      <i class="fas fa-chevron-down text-teal/50 text-xl"></i>
     </div>
   </section>
 
   <!-- PROBLEMS -->
-  <section class="py-24 px-6 lg:px-12">
+  <section class="py-20 px-6 lg:px-12 bg-white">
     <div class="max-w-7xl mx-auto text-center">
       <h2 class="text-4xl font-bold text-navy mb-6">You Don’t Need More Tools</h2>
-      <p class="text-xl text-gray-600 mb-16 max-w-3xl mx-auto">You need fewer breaches. We fix the 20% that causes 80% of risk.</p>
+      <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">You need fewer breaches. We fix the 20% that causes 80% of risk.</p>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-teal/20 group">
-          <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-red-100 transition">
+        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
+          <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-4">
             <i class="fas fa-cloud text-2xl text-red-500"></i>
           </div>
           <h3 class="text-xl font-semibold mb-3 text-navy">Cloud Exposure</h3>
           <p class="text-gray-600">Open buckets, weak IAM, shadow IT — fixed in 48 hrs.</p>
         </div>
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-teal/20 group">
-          <div class="w-14 h-14 bg-purple-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-purple-100 transition">
+        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
+          <div class="w-14 h-14 bg-purple-50 rounded-xl flex items-center justify-center mb-4">
             <i class="fas fa-robot text-2xl text-purple-500"></i>
           </div>
           <h3 class="text-xl font-semibold mb-3 text-navy">AI Pipeline Leaks</h3>
           <p class="text-gray-600">Model data exfiltration, inference attacks — contained.</p>
         </div>
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-teal/20 group">
-          <div class="w-14 h-14 bg-orange-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-orange-100 transition">
+        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
+          <div class="w-14 h-14 bg-orange-50 rounded-xl flex items-center justify-center mb-4">
             <i class="fas fa-fire-extinguisher text-2xl text-orange-500"></i>
           </div>
           <h3 class="text-xl font-semibold mb-3 text-navy">Incident Chaos</h3>
@@ -208,37 +191,37 @@
   </section>
 
   <!-- SERVICES -->
-  <section id="services" class="py-32 px-6 lg:px-12 bg-gradient-to-r from-navy to-slate-900">
+  <section id="services" class="py-20 px-6 lg:px-12 bg-white">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-5xl font-bold text-white text-center mb-20">What We Do</h2>
+      <h2 class="text-4xl font-bold text-navy text-center mb-12">What We Do</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="card-hover group bg-gradient-to-br from-teal/20 to-teal/5 p-8 rounded-2xl border border-teal/30 hover:border-teal/70 text-center">
-          <div class="w-16 h-16 bg-gradient-to-br from-teal to-cyan-400 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-125 transition-all shadow-lg shadow-teal/30">
-            <i class="fas fa-shield-alt text-2xl text-white font-bold"></i>
+        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm text-center">
+          <div class="w-16 h-16 bg-teal/10 rounded-xl flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-shield-alt text-2xl text-teal font-bold"></i>
           </div>
-          <h3 class="text-2xl font-bold text-white mb-3">Cloud Security Audit</h3>
-          <p class="text-gray-300 mb-6 text-lg">Full AWS/Azure/GCP review. 10-page report. 48 hrs.</p>
-          <a href="#contact" class="text-teal hover:text-cyan-300 font-semibold inline-flex items-center gap-2 justify-center transition">
+          <h3 class="text-xl font-bold text-navy mb-3">Cloud Security Audit</h3>
+          <p class="text-gray-600 mb-6">Full AWS/Azure/GCP review. 10-page report. 48 hrs.</p>
+          <a href="#contact" class="text-teal hover:text-cyan-600 font-semibold inline-flex items-center gap-2 justify-center transition">
             Get Audit <i class="fas fa-arrow-right text-sm"></i>
           </a>
         </div>
-        <div class="card-hover group bg-gradient-to-br from-purple-500/20 to-purple-500/5 p-8 rounded-2xl border border-purple-500/30 hover:border-purple-500/70 text-center">
-          <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-125 transition-all shadow-lg shadow-purple-500/30">
-            <i class="fas fa-brain text-2xl text-white font-bold"></i>
+        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm text-center">
+          <div class="w-16 h-16 bg-purple-50 rounded-xl flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-brain text-2xl text-purple-500 font-bold"></i>
           </div>
-          <h3 class="text-2xl font-bold text-white mb-3">AI Safety Review</h3>
-          <p class="text-gray-300 mb-6 text-lg">Secure training, inference, and data flows.</p>
-          <a href="#contact" class="text-purple-400 hover:text-purple-300 font-semibold inline-flex items-center gap-2 justify-center transition">
+          <h3 class="text-xl font-bold text-navy mb-3">AI Safety Review</h3>
+          <p class="text-gray-600 mb-6">Secure training, inference, and data flows.</p>
+          <a href="#contact" class="text-purple-500 hover:text-purple-400 font-semibold inline-flex items-center gap-2 justify-center transition">
             Start Review <i class="fas fa-arrow-right text-sm"></i>
           </a>
         </div>
-        <div class="card-hover group bg-gradient-to-br from-orange-500/20 to-orange-500/5 p-8 rounded-2xl border border-orange-500/30 hover:border-orange-500/70 text-center">
-          <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-125 transition-all shadow-lg shadow-orange-500/30">
-            <i class="fas fa-bell text-2xl text-white font-bold"></i>
+        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm text-center">
+          <div class="w-16 h-16 bg-orange-50 rounded-xl flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-bell text-2xl text-orange-500 font-bold"></i>
           </div>
-          <h3 class="text-2xl font-bold text-white mb-3">Incident Response</h3>
-          <p class="text-gray-300 mb-6 text-lg">24/7 retainer. Contain. Recover. Resume.</p>
-          <a href="#contact" class="text-orange-400 hover:text-orange-300 font-semibold inline-flex items-center gap-2 justify-center transition">
+          <h3 class="text-xl font-bold text-navy mb-3">Incident Response</h3>
+          <p class="text-gray-600 mb-6">24/7 retainer. Contain. Recover. Resume.</p>
+          <a href="#contact" class="text-orange-500 hover:text-orange-400 font-semibold inline-flex items-center gap-2 justify-center transition">
             Get Retainer <i class="fas fa-arrow-right text-sm"></i>
           </a>
         </div>
@@ -247,136 +230,138 @@
   </section>
 
   <!-- HOW WE WORK -->
-  <section id="how" class="py-32 px-6 lg:px-12 bg-gradient-to-b from-slate-900 to-navy text-white">
+  <section id="how" class="py-20 px-6 lg:px-12 bg-white text-navy">
     <div class="max-w-7xl mx-auto text-center">
-      <h2 class="text-5xl font-bold mb-16">How We Work</h2>
+      <h2 class="text-4xl font-bold mb-12">How We Work</h2>
       <div class="grid md:grid-cols-4 gap-8 relative">
-        <div class="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-teal/30"></div>
-        <div class="relative z-10">
-          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-navy shadow-lg">1</div>
+        <div class="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-teal/20"></div>
+        <div>
+          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-white shadow">1</div>
           <h3 class="font-semibold text-xl mb-2">Discover</h3>
-          <p class="text-gray-300">30-min call. Map your risks.</p>
+          <p class="text-gray-600">30-min call. Map your risks.</p>
         </div>
-        <div class="relative z-10">
-          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-navy shadow-lg">2</div>
+        <div>
+          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-white shadow">2</div>
           <h3 class="font-semibold text-xl mb-2">Assess</h3>
-          <p class="text-gray-300">1-week deep dive.</p>
+          <p class="text-gray-600">1-week deep dive.</p>
         </div>
-        <div class="relative z-10">
-          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-navy shadow-lg">3</div>
+        <div>
+          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-white shadow">3</div>
           <h3 class="font-semibold text-xl mb-2">Fix</h3>
-          <p class="text-gray-300">You approve. We deploy.</p>
+          <p class="text-gray-600">You approve. We deploy.</p>
         </div>
-        <div class="relative z-10">
-          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-navy shadow-lg">4</div>
+        <div>
+          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-white shadow">4</div>
           <h3 class="font-semibold text-xl mb-2">Protect</h3>
-          <p class="text-gray-300">Ongoing. Transparent.</p>
+          <p class="text-gray-600">Ongoing. Transparent.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- RESULTS -->
-  <section id="results" class="py-32 px-6 lg:px-12 bg-gradient-to-b from-gray-900 to-gray-950">
+  <section id="results" class="py-20 px-6 lg:px-12 bg-white">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-5xl font-bold text-white text-center mb-20">Results That Speak</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="card-hover group bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 p-8 rounded-2xl border border-emerald-500/30 hover:border-emerald-500/70 hover:shadow-2xl hover:shadow-emerald-500/20">
-          <div class="mb-6 text-4xl"><i class="fas fa-check-circle text-emerald-400"></i></div>
-          <p class="text-3xl font-bold text-emerald-400 mb-3">98% Risk Down</p>
-          <p class="font-semibold mb-2 text-white">FinTech Scale-Up</p>
-          <p class="text-gray-400">Passed SOC 2 in 21 days.</p>
+      <h2 class="text-3xl font-bold text-navy text-center mb-8">Results That Speak</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center">
+          <div class="mb-4 text-3xl text-emerald-500"><i class="fas fa-check-circle"></i></div>
+          <p class="text-2xl font-bold text-navy mb-2">98% Risk Down</p>
+          <p class="font-medium mb-1 text-gray-600">FinTech Scale-Up</p>
+          <p class="text-sm text-gray-500">Passed SOC 2 in 21 days.</p>
         </div>
-        <div class="card-hover group bg-gradient-to-br from-amber-500/20 to-amber-500/5 p-8 rounded-2xl border border-amber-500/30 hover:border-amber-500/70 hover:shadow-2xl hover:shadow-amber-500/20">
-          <div class="mb-6 text-4xl"><i class="fas fa-dollar-sign text-amber-400"></i></div>
-          <p class="text-3xl font-bold text-amber-400 mb-3">$2.1M Saved</p>
-          <p class="font-semibold mb-2 text-white">AI Health Startup</p>
-          <p class="text-gray-400">Blocked model poisoning attack.</p>
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center">
+          <div class="mb-4 text-3xl text-amber-500"><i class="fas fa-dollar-sign"></i></div>
+          <p class="text-2xl font-bold text-navy mb-2">$2.1M Saved</p>
+          <p class="font-medium mb-1 text-gray-600">AI Health Startup</p>
+          <p class="text-sm text-gray-500">Blocked model poisoning attack.</p>
         </div>
-        <div class="card-hover group bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 p-8 rounded-2xl border border-cyan-500/30 hover:border-cyan-500/70 hover:shadow-2xl hover:shadow-cyan-500/20">
-          <div class="mb-6 text-4xl"><i class="fas fa-bolt text-cyan-400"></i></div>
-          <p class="text-3xl font-bold text-cyan-400 mb-3">3.5 Hr Recovery</p>
-          <p class="font-semibold mb-2 text-white">E-Commerce Brand</p>
-          <p class="text-gray-400">Zero data loss from ransomware.</p>
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center">
+          <div class="mb-4 text-3xl text-cyan-500"><i class="fas fa-bolt"></i></div>
+          <p class="text-2xl font-bold text-navy mb-2">3.5 Hr Recovery</p>
+          <p class="font-medium mb-1 text-gray-600">E-Commerce Brand</p>
+          <p class="text-sm text-gray-500">Zero data loss from ransomware.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PRICING -->
-  <section id="pricing" class="py-32 px-6 lg:px-12 bg-gradient-to-b from-navy to-gray-900">
+  <section id="pricing" class="py-20 px-6 lg:px-12 bg-white">
     <div class="max-w-7xl mx-auto text-center">
-      <h2 class="text-5xl font-bold text-white mb-6">Clear Pricing</h2>
-      <p class="text-xl text-gray-400 mb-16">No surprises. No contracts until you're ready.</p>
-      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <div class="card-hover bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl shadow-lg border border-slate-700/50 hover:border-teal/50">
-          <h3 class="text-2xl font-bold text-white mb-4">Audit</h3>
-          <p class="text-4xl font-bold text-teal mb-3">AED 2,500</p>
-          <p class="text-gray-400 mb-8">One-time. Full report + fixes.</p>
-          <ul class="space-y-3 text-sm text-gray-300 mb-8">
-            <li class="flex items-center gap-3"><i class="fas fa-check text-teal text-lg"></i> 48-hour turnaround</li>
-            <li class="flex items-center gap-3"><i class="fas fa-check text-teal text-lg"></i> 10-page detailed report</li>
-            <li class="flex items-center gap-3"><i class="fas fa-check text-teal text-lg"></i> Priority fixes included</li>
+      <h2 class="text-3xl font-bold text-navy mb-6">Clear Pricing</h2>
+      <p class="text-lg text-gray-600 mb-12">No surprises. No contracts until you're ready.</p>
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h3 class="text-xl font-bold mb-3 text-navy">Audit</h3>
+          <p class="text-2xl font-bold text-teal mb-3">AED 2,500</p>
+          <p class="text-gray-600 mb-6">One-time. Full report + fixes.</p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> 48-hour turnaround</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> 10-page detailed report</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> Priority fixes included</li>
           </ul>
-          <a href="#contact" class="block text-center btn-modern border-2 border-teal text-teal py-3 rounded-lg font-semibold hover:bg-teal/10 transition">Get Started</a>
+          <a href="#contact" class="block text-center btn-modern border-2 border-teal text-teal py-2 rounded-lg font-semibold hover:bg-teal/10 transition">Get Started</a>
         </div>
-        <div class="card-hover bg-gradient-to-br from-teal/30 to-cyan-500/20 p-8 rounded-2xl shadow-2xl shadow-teal/20 border-2 border-teal/60 relative scale-105">
-          <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold px-5 py-2.5 rounded-full shadow-lg shadow-amber-500/50 z-10">MOST POPULAR</div>
-          <h3 class="text-2xl font-bold text-white mb-4">Protect</h3>
-          <p class="text-4xl font-bold text-white mb-3">AED 1,200<span class="text-lg">/mo</span></p>
-          <p class="text-slate-200 mb-8 font-medium">Ongoing + quarterly audits</p>
-          <ul class="space-y-3 text-sm text-slate-200 mb-8">
-            <li class="flex items-center gap-3"><i class="fas fa-check text-white text-lg font-bold"></i> Continuous monitoring</li>
-            <li class="flex items-center gap-3"><i class="fas fa-check text-white text-lg font-bold"></i> Quarterly security audits</li>
-            <li class="flex items-center gap-3"><i class="fas fa-check text-white text-lg font-bold"></i> Priority support</li>
-          </ul>
-          <a href="#contact" class="block text-center btn-modern bg-gradient-to-r from-navy to-slate-900 text-teal py-3 rounded-lg font-semibold hover:shadow-lg transition">Choose Plan</a>
+        <div class="relative scale-100">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-400 text-navy text-xs font-bold px-3 py-1 rounded-full shadow-sm">MOST POPULAR</div>
+          <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+            <h3 class="text-xl font-bold text-navy mb-3">Protect</h3>
+            <p class="text-2xl font-bold text-navy mb-2">AED 1,200<span class="text-base text-gray-600">/mo</span></p>
+            <p class="text-gray-600 mb-6">Ongoing + quarterly audits</p>
+            <ul class="space-y-2 text-sm text-gray-600 mb-6">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> Continuous monitoring</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> Quarterly security audits</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> Priority support</li>
+            </ul>
+            <a href="#contact" class="block text-center btn-modern bg-gradient-to-r from-teal to-cyan-400 text-white py-2 rounded-lg font-semibold hover:shadow-md transition">Choose Plan</a>
+          </div>
         </div>
-        <div class="card-hover bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl shadow-lg border border-slate-700/50 hover:border-purple-500/50">
-          <h3 class="text-2xl font-bold text-white mb-4">Enterprise</h3>
-          <p class="text-4xl font-bold text-purple-400 mb-3">Custom</p>
-          <p class="text-gray-400 mb-8">Dedicated team + SLAs</p>
-          <ul class="space-y-3 text-sm text-gray-300 mb-8">
-            <li class="flex items-center gap-3"><i class="fas fa-check text-purple-400 text-lg"></i> Dedicated security team</li>
-            <li class="flex items-center gap-3"><i class="fas fa-check text-purple-400 text-lg"></i> Custom SLAs</li>
-            <li class="flex items-center gap-3"><i class="fas fa-check text-purple-400 text-lg"></i> 24/7 incident response</li>
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h3 class="text-xl font-bold mb-3 text-navy">Enterprise</h3>
+          <p class="text-2xl font-bold text-purple-500 mb-3">Custom</p>
+          <p class="text-gray-600 mb-6">Dedicated team + SLAs</p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-center gap-2"><i class="fas fa-check text-purple-500"></i> Dedicated security team</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-purple-500"></i> Custom SLAs</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-purple-500"></i> 24/7 incident response</li>
           </ul>
-          <a href="#contact" class="block text-center btn-modern border-2 border-purple-500 text-purple-400 py-3 rounded-lg font-semibold hover:bg-purple-500/10 transition">Contact Sales</a>
+          <a href="#contact" class="block text-center btn-modern border-2 border-purple-500 text-purple-500 py-2 rounded-lg font-semibold hover:bg-purple-50 transition">Contact Sales</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="py-32 px-6 lg:px-12 bg-gradient-to-b from-gray-900 to-navy text-white">
+  <section id="contact" class="py-20 px-6 lg:px-12 bg-white text-navy">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-5xl font-bold mb-6">Let's Secure Your Business</h2>
-      <p class="text-xl text-gray-300 mb-12">Free 30-minute call. No pitch. Just clarity.</p>
-      <form id="contact-form" action="https://formspree.io/f/your-email-here" method="POST" class="space-y-6 glass-effect p-8 rounded-2xl text-left border border-white/10">
+      <h2 class="text-3xl font-bold mb-4">Let's Secure Your Business</h2>
+      <p class="text-lg text-gray-600 mb-8">Free 30-minute call. No pitch. Just clarity.</p>
+      <form id="contact-form" action="https://formspree.io/f/your-email-here" method="POST" class="space-y-6 p-8 rounded-2xl text-left bg-gray-50 border border-gray-100">
         <div class="grid md:grid-cols-2 gap-6">
           <div>
-            <input type="text" name="name" placeholder="Name *" class="w-full p-4 rounded-lg bg-white/5 border border-white/20 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/50 transition text-white placeholder-white/50 text-lg" required />
+            <input type="text" name="name" placeholder="Name *" class="w-full p-4 rounded-lg bg-white border border-gray-200 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20 transition text-gray-900 placeholder-gray-400 text-lg" required />
           </div>
           <div>
-            <input type="email" name="email" placeholder="Email *" class="w-full p-4 rounded-lg bg-white/5 border border-white/20 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/50 transition text-white placeholder-white/50 text-lg" required />
+            <input type="email" name="email" placeholder="Email *" class="w-full p-4 rounded-lg bg-white border border-gray-200 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20 transition text-gray-900 placeholder-gray-400 text-lg" required />
           </div>
         </div>
         <div>
-          <input type="text" name="company" placeholder="Company" class="w-full p-4 rounded-lg bg-white/5 border border-white/20 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/50 transition text-white placeholder-white/50 text-lg" />
+          <input type="text" name="company" placeholder="Company" class="w-full p-4 rounded-lg bg-white border border-gray-200 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20 transition text-gray-900 placeholder-gray-400 text-lg" />
         </div>
         <div>
-          <select name="service" class="w-full p-4 rounded-lg bg-white/5 border border-white/20 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/50 transition text-white text-lg">
-            <option value="" class="bg-slate-900">Select Service (Optional)</option>
-            <option value="audit" class="bg-slate-900">Cloud Security Audit</option>
-            <option value="ai-safety" class="bg-slate-900">AI Safety Review</option>
-            <option value="incident-response" class="bg-slate-900">Incident Response</option>
-            <option value="protect" class="bg-slate-900">Ongoing Protection</option>
+          <select name="service" class="w-full p-4 rounded-lg bg-white border border-gray-200 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20 transition text-gray-900 text-lg">
+            <option value="">Select Service (Optional)</option>
+            <option value="audit">Cloud Security Audit</option>
+            <option value="ai-safety">AI Safety Review</option>
+            <option value="incident-response">Incident Response</option>
+            <option value="protect">Ongoing Protection</option>
           </select>
         </div>
         <div>
-          <textarea name="message" placeholder="Your biggest concern..." class="w-full p-4 rounded-lg bg-white/5 border border-white/20 h-32 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/50 transition text-white placeholder-white/50 resize-none text-lg"></textarea>
+          <textarea name="message" placeholder="Your biggest concern..." class="w-full p-4 rounded-lg bg-white border border-gray-200 h-32 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20 transition text-gray-900 placeholder-gray-400 resize-none text-lg"></textarea>
         </div>
-        <button type="submit" class="w-full btn-modern bg-gradient-to-r from-teal to-cyan-400 text-white font-bold py-4 rounded-lg hover:shadow-xl hover:shadow-teal/50 transition flex items-center justify-center gap-2 text-lg">
+        <button type="submit" class="w-full btn-modern bg-gradient-to-r from-teal to-cyan-400 text-white font-bold py-4 rounded-lg hover:shadow-md transition flex items-center justify-center gap-2 text-lg">
           <i class="fas fa-calendar-check"></i> Book My Call
         </button>
         <p class="text-xs text-gray-400 text-center">We'll respond within 2 hours during business hours</p>
@@ -385,44 +370,44 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-gradient-to-b from-navy to-slate-950 text-white py-16 px-6 lg:px-12 border-t border-white/10">
+  <footer class="bg-white text-gray-700 py-12 px-6 lg:px-12 border-t">
     <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 text-sm">
       <div>
         <div class="flex items-center space-x-3 mb-4">
-            <div class="w-10 h-10 bg-gradient-to-br from-teal to-cyan-400 rounded-lg flex items-center justify-center shadow-lg shadow-teal/30">
-            <i class="fas fa-shield-alt text-white text-sm font-bold"></i>
+          <div class="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center">
+            <i class="fas fa-shield-alt text-teal text-sm font-bold"></i>
           </div>
-          <span class="font-bold text-lg gradient-text">NetCop</span>
+          <span class="font-bold text-lg text-navy">NetCop</span>
         </div>
-        <p class="text-gray-400 text-base">Cybersecurity & AI safety for growing businesses.</p>
+        <p class="text-gray-600 text-base">Cybersecurity & AI safety for growing businesses.</p>
       </div>
       <div>
-        <h4 class="font-semibold mb-4 text-white">Services</h4>
-        <ul class="space-y-3 text-gray-400">
+        <h4 class="font-semibold mb-3 text-navy">Services</h4>
+        <ul class="space-y-2 text-gray-600">
           <li><a href="#services" class="hover:text-teal transition">Cloud Audit</a></li>
           <li><a href="#services" class="hover:text-teal transition">AI Safety</a></li>
           <li><a href="#services" class="hover:text-teal transition">Incident Response</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="font-semibold mb-4 text-white">Company</h4>
-        <ul class="space-y-3 text-gray-400">
+        <h4 class="font-semibold mb-3 text-navy">Company</h4>
+        <ul class="space-y-2 text-gray-600">
           <li><a href="#" class="hover:text-teal transition">About</a></li>
           <li><a href="#" class="hover:text-teal transition">Blog</a></li>
           <li><a href="#" class="hover:text-teal transition">Careers</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="font-semibold mb-4 text-white">Connect</h4>
+        <h4 class="font-semibold mb-3 text-navy">Connect</h4>
         <div class="flex space-x-4">
-          <a href="#" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-teal/20 flex items-center justify-center text-gray-400 hover:text-teal transition duration-300"><i class="fab fa-linkedin"></i></a>
-          <a href="#" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-teal/20 flex items-center justify-center text-gray-400 hover:text-teal transition duration-300"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-teal/20 flex items-center justify-center text-gray-400 hover:text-teal transition duration-300"><i class="fab fa-github"></i></a>
+          <a href="#" class="w-10 h-10 rounded-lg bg-gray-100 hover:bg-teal/20 flex items-center justify-center text-gray-600 hover:text-teal transition duration-300"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="w-10 h-10 rounded-lg bg-gray-100 hover:bg-teal/20 flex items-center justify-center text-gray-600 hover:text-teal transition duration-300"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="w-10 h-10 rounded-lg bg-gray-100 hover:bg-teal/20 flex items-center justify-center text-gray-600 hover:text-teal transition duration-300"><i class="fab fa-github"></i></a>
         </div>
-        <p class="text-gray-400 mt-4 text-xs">© 2025 NetCop Consultancy. All rights reserved.</p>
+        <p class="text-gray-500 mt-4 text-xs">© 2025 NetCop Consultancy. All rights reserved.</p>
       </div>
     </div>
-    <div class="max-w-7xl mx-auto mt-8 pt-8 border-t border-white/10 text-center text-xs text-gray-400">
+    <div class="max-w-7xl mx-auto mt-8 pt-8 border-t border-gray-100 text-center text-xs text-gray-500">
       <a href="#" class="hover:text-teal transition">Privacy Policy</a> • 
       <a href="#" class="hover:text-teal transition">Terms of Service</a>
     </div>
