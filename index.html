@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Cybersecurity & AI safety for SMEs. Secure cloud, apps, and ML pipelines — fast, clear, trusted." />
-  <meta property="og:title" content="NetCop Consultancy | Secure What Matters" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" />
-  <title>NetCop • Cybersecurity & AI Safety</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="NetCop Digital | Premium Digital Branding & Experience Design. We craft brands that defy gravity." />
+  <meta property="og:title" content="NetCop Digital | Brand & Experience Design" />
+  <meta property="og:image"
+    content="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" />
+  <title>NetCop Digital • Brand & Experience</title>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -15,500 +18,783 @@
       theme: {
         extend: {
           colors: {
-            navy: '#0b2447',
-            teal: '#2dd4bf',
-            amber: '#f59e0b',
+            brand: {
+              dark: '#0f0c29', // Deep purple-black
+              primary: '#7b2cbf', // Vibrant purple
+              accent: '#f72585', // Pink accent
+              light: '#e0c3fc', // Light lavender
+            }
           },
-          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          fontFamily: { sans: ['Outfit', 'Inter', 'system-ui', 'sans-serif'] },
         }
       }
     }
   </script>
-  <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes pulse { 0%,100% { opacity: 1 } 50% { opacity: 0.5 } }
-    @keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes glow { 0%,100% { box-shadow: 0 0 20px rgba(45,212,191,0.15) } 50% { box-shadow: 0 0 36px rgba(45,212,191,0.28) } }
-    @keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
 
-    .animate-fade-in-up { animation: fadeInUp 0.6s ease-out; }
-    .animate-pulse { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
-    .animate-slide-down { animation: slideDown 0.6s ease-out; }
-    .animate-glow { animation: glow 3s ease-in-out infinite; }
-    .animate-float { animation: float 3s ease-in-out infinite; }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-    .nav-mobile { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-    .nav-mobile.active { max-height: 500px; }
-    .scroll-smooth { scroll-behavior: smooth; }
+    @keyframes pulse {
 
-    .gradient-text { background: linear-gradient(135deg,#2dd4bf 0%,#06b6d4 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+      0%,
+      100% {
+        opacity: 1
+      }
 
-    .glass-effect { background: rgba(255,255,255,0.85); backdrop-filter: blur(6px); border: 1px solid rgba(0,0,0,0.04); }
-    .card-hover { transition: all 0.28s cubic-bezier(0.4,0,0.2,1); }
-    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(2,6,23,0.06); }
+      50% {
+        opacity: 0.5
+      }
+    }
 
-    .btn-modern { position: relative; overflow: hidden; transition: all 0.25s ease; }
-    .btn-modern::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: rgba(255,255,255,0.18); transition: left 0.45s ease; }
-    .btn-modern:hover::before { left: 100%; }
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes glow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 20px rgba(123, 44, 191, 0.3)
+      }
+
+      50% {
+        box-shadow: 0 0 40px rgba(247, 37, 133, 0.6)
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-12px)
+      }
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .animate-pulse-slow {
+      animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .bg-animated {
+      background-size: 200% 200%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    .nav-mobile {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-mobile.active {
+      max-height: 500px;
+    }
+
+    .scroll-smooth {
+      scroll-behavior: smooth;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #f72585 0%, #7209b7 50%, #4361ee 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% auto;
+      animation: gradientBG 5s linear infinite;
+    }
+
+    .glass-effect {
+      background: rgba(15, 12, 41, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 20px 40px -10px rgba(123, 44, 191, 0.3);
+    }
+
+    .btn-modern {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .btn-modern::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+      transform: skewX(-20deg);
+    }
+
+    .btn-modern:hover::after {
+      left: 100%;
+    }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900 antialiased">
+
+<body class="bg-[#050511] text-white antialiased font-sans selection:bg-brand-accent selection:text-white">
 
   <!-- HEADER -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-navy via-navy to-navy/95 backdrop-blur-lg shadow-lg border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center space-x-2 hover:opacity-80 transition">
-        <div class="w-10 h-10 bg-teal/20 rounded-lg flex items-center justify-center">
-          <i class="fas fa-shield-alt text-teal text-sm font-bold"></i>
+  <header class="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white/5 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-3 hover:opacity-80 transition group">
+        <div
+          class="w-10 h-10 bg-gradient-to-tr from-brand-primary to-brand-accent rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300">
+          <i class="fas fa-cube text-white text-lg"></i>
         </div>
-        <span class="font-bold text-xl text-white">NetCop</span>
+        <span class="font-bold text-2xl tracking-tight">NetCop<span class="text-brand-accent">.</span></span>
       </a>
-      <nav class="hidden md:flex items-center space-x-1">
-        <a href="#services" class="text-white/70 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/10">Services</a>
-        <a href="#how" class="text-white/70 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/10">How We Work</a>
-        <a href="#results" class="text-white/70 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/10">Results</a>
-        <a href="#pricing" class="text-white/70 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/10">Pricing</a>
-        <a href="#contact" class="btn-modern bg-gradient-to-r from-teal to-cyan-400 text-white font-semibold px-6 py-2.5 rounded-lg hover:shadow-lg hover:shadow-teal/40 ml-4">
-          Book Call
+      <nav class="hidden md:flex items-center space-x-2">
+        <a href="#work"
+          class="text-gray-300 hover:text-brand-accent transition px-4 py-2 rounded-lg hover:bg-white/5">Work</a>
+        <a href="#services"
+          class="text-gray-300 hover:text-brand-accent transition px-4 py-2 rounded-lg hover:bg-white/5">Services</a>
+        <a href="#process"
+          class="text-gray-300 hover:text-brand-accent transition px-4 py-2 rounded-lg hover:bg-white/5">Process</a>
+        <a href="#pricing"
+          class="text-gray-300 hover:text-brand-accent transition px-4 py-2 rounded-lg hover:bg-white/5">Plans</a>
+        <a href="#contact"
+          class="btn-modern bg-gradient-to-r from-brand-primary to-brand-accent text-white font-semibold px-6 py-2.5 rounded-full hover:shadow-[0_0_20px_rgba(247,37,133,0.5)] ml-4 transition-all">
+          Start Project
         </a>
       </nav>
-      <button id="mobile-menu-btn" class="md:hidden text-white">
+      <button id="mobile-menu-btn"
+        class="md:hidden text-white w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition">
         <i class="fas fa-bars text-xl"></i>
       </button>
     </div>
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="nav-mobile md:hidden bg-navy/95 border-t border-white/10">
+    <div id="mobile-menu" class="nav-mobile md:hidden bg-[#0a0a1a] border-t border-white/10">
       <nav class="flex flex-col px-6 py-4 space-y-3">
-        <a href="#services" class="text-white/70 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/10">Services</a>
-        <a href="#how" class="text-white/70 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/10">How We Work</a>
-        <a href="#results" class="text-white/70 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/10">Results</a>
-        <a href="#pricing" class="text-white/70 hover:text-teal transition px-4 py-2 rounded-lg hover:bg-white/10">Pricing</a>
-        <a href="#contact" class="btn-modern bg-gradient-to-r from-teal to-cyan-400 text-white font-semibold px-6 py-2.5 rounded-lg hover:shadow-lg hover:shadow-teal/40 text-center block">
-          Book Call
+        <a href="#work"
+          class="text-gray-300 hover:text-brand-accent transition px-4 py-3 rounded-xl hover:bg-white/5">Work</a>
+        <a href="#services"
+          class="text-gray-300 hover:text-brand-accent transition px-4 py-3 rounded-xl hover:bg-white/5">Services</a>
+        <a href="#process"
+          class="text-gray-300 hover:text-brand-accent transition px-4 py-3 rounded-xl hover:bg-white/5">Process</a>
+        <a href="#pricing"
+          class="text-gray-300 hover:text-brand-accent transition px-4 py-3 rounded-xl hover:bg-white/5">Plans</a>
+        <a href="#contact"
+          class="btn-modern bg-gradient-to-r from-brand-primary to-brand-accent text-white font-semibold px-6 py-3 rounded-xl hover:shadow-lg text-center block mt-2">
+          Start Project
         </a>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="relative min-h-screen flex items-center justify-center pt-32 overflow-hidden bg-gradient-to-br from-navy via-navy to-navy/90">
-    <!-- Animated Background Elements -->
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute -top-40 -right-40 w-96 h-96 bg-teal/15 rounded-full blur-3xl opacity-80 animate-float"></div>
-      <div class="absolute top-1/3 -left-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl opacity-60 animate-float" style="animation-delay: 1.5s;"></div>
-      <div class="absolute -bottom-32 right-1/4 w-72 h-72 bg-teal/10 rounded-full blur-3xl opacity-50 animate-float" style="animation-delay: 0.7s;"></div>
-      <!-- Grid pattern overlay -->
-      <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(0deg, rgba(45,212,191,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(45,212,191,0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+  <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
+    <!-- Background Gradients -->
+    <div class="absolute inset-0 bg-[#050511]">
+      <div
+        class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-brand-primary/20 rounded-full blur-[100px] animate-pulse-slow">
+      </div>
+      <div
+        class="absolute bottom-0 left-[-10%] w-[500px] h-[500px] bg-brand-accent/15 rounded-full blur-[120px] animate-pulse-slow"
+        style="animation-delay: 2s;"></div>
+      <div
+        class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-150 contrast-150">
+      </div>
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 text-center">
       <!-- Badge -->
-      <div class="mb-8 inline-block animate-fade-in-up">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-teal/30 bg-teal/10 backdrop-blur-sm">
-          <span class="w-2 h-2 bg-teal rounded-full animate-pulse"></span>
-          <span class="text-teal font-medium text-sm">🚀 Trusted by 50+ Scale-ups</span>
+      <div class="mb-10 inline-block animate-fade-in-up">
+        <div
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md">
+          <span class="relative flex h-2 w-2">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-accent"></span>
+          </span>
+          <span class="text-gray-300 font-medium text-sm tracking-wide">ACCEPTING NEW PROJECTS FOR 2025</span>
         </div>
       </div>
 
       <!-- Main Heading -->
-      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-fade-in-up text-white">
-        Breach Prevention That Actually <span class="gradient-text">Works</span>
+      <h1 class="text-6xl sm:text-7xl lg:text-8xl font-extrabold mb-8 leading-[1.1] tracking-tight animate-fade-in-up">
+        We Build Brands That <br class="hidden lg:block" />
+        <span class="gradient-text">Defy Gravity</span>
       </h1>
 
       <!-- Subheading -->
-      <p class="text-lg sm:text-xl lg:text-2xl mb-12 max-w-3xl mx-auto text-white/80 leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
-        Stop overspending on tools you don't need. We audit cloud, secure AI pipelines, and handle incidents—so your team sleeps better.
+      <p class="text-xl sm:text-2xl mb-12 max-w-2xl mx-auto text-gray-400 font-light leading-relaxed animate-fade-in-up"
+        style="animation-delay: 0.2s;">
+        Stop blending in. We fuse strategy, <strong class="text-white font-medium">AI-driven insights</strong>, and
+        technology to turn your business into an unforgettable digital
+        experience.
       </p>
 
       <!-- CTA Buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up" style="animation-delay: 0.4s;">
-        <a href="#contact" class="btn-modern bg-gradient-to-r from-teal to-cyan-400 text-navy font-bold px-8 py-4 rounded-xl hover:shadow-2xl hover:shadow-teal/50 transition-all text-lg inline-block">
-          <i class="fas fa-calendar-check mr-2"></i> Get Free Audit
+      <div class="flex flex-col sm:flex-row gap-5 justify-center mb-20 animate-fade-in-up"
+        style="animation-delay: 0.4s;">
+        <a href="#contact"
+          class="btn-modern bg-white text-brand-dark font-bold px-10 py-5 rounded-full hover:bg-gray-100 transition-all text-lg shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+          Launch Your Brand
         </a>
-        <a href="#how" class="btn-modern border-2 border-teal/50 text-white font-semibold px-8 py-4 rounded-xl hover:border-teal hover:bg-teal/10 transition-all text-lg inline-block">
-          How It Works <i class="fas fa-arrow-right ml-2"></i>
+        <a href="#work"
+          class="btn-modern border border-white/20 text-white font-medium px-10 py-5 rounded-full hover:bg-white/10 transition-all text-lg backdrop-blur-sm">
+          View Our Work
         </a>
       </div>
 
       <!-- Trust Indicators -->
-      <div class="flex flex-col sm:flex-row gap-8 justify-center items-center max-w-2xl mx-auto">
-        <div class="text-center">
-          <p class="text-3xl font-bold text-teal mb-1">98%</p>
-          <p class="text-sm text-white/60">Risk Reduction</p>
-        </div>
-        <div class="hidden sm:block w-px h-12 bg-white/20"></div>
-        <div class="text-center">
-          <p class="text-3xl font-bold text-teal mb-1">48h</p>
-          <p class="text-sm text-white/60">Cloud Audit</p>
-        </div>
-        <div class="hidden sm:block w-px h-12 bg-white/20"></div>
-        <div class="text-center">
-          <p class="text-3xl font-bold text-teal mb-1">24/7</p>
-          <p class="text-sm text-white/60">Incident Support</p>
+      <div class="animate-fade-in-up opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
+        style="animation-delay: 0.6s;">
+        <p class="text-sm font-semibold tracking-widest text-gray-500 mb-6 uppercase">Trusted by innovators</p>
+        <div class="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
+          <i class="fab fa-aws text-3xl"></i>
+          <i class="fab fa-stripe text-3xl"></i>
+          <i class="fab fa-react text-3xl"></i>
+          <i class="fab fa-figma text-3xl"></i>
+          <i class="fab fa-google text-2xl"></i>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 animate-bounce">
-      <p class="text-white/50 text-sm">Scroll to explore</p>
-      <i class="fas fa-chevron-down text-teal/50 text-xl"></i>
+  <!-- PAIN POINTS -->
+  <section class="py-24 px-6 lg:px-12 bg-[#0a0a1a]">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">First Impressions <br><span class="text-brand-accent">Last
+              0.05 Seconds.</span></h2>
+          <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+            In the digital noise, "good enough" is invisible. If your brand doesn't instantly captivate, you're losing
+            revenue to competitors who look better than you.
+          </p>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center shrink-0">
+                <i class="fas fa-ghost text-gray-400 text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-1">The "Invisible" Brand</h3>
+                <p class="text-gray-500">Great product, but nobody remembers it. Low recall = low growth.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center shrink-0">
+                <i class="fas fa-mobile-alt text-gray-400 text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-1">Clunky Experience</h3>
+                <p class="text-gray-500">Users leave if it's hard to use. Design is not just art; it's functionality.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-brand-primary to-brand-accent rounded-3xl blur-2xl opacity-30 transform rotate-3">
+          </div>
+          <div class="relative bg-gray-900 border border-white/10 rounded-2xl p-8 shadow-2xl">
+            <div class="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
+              <div class="flex gap-2">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+              </div>
+              <div class="text-xs text-gray-500 font-mono">dashboard_concept.fig</div>
+            </div>
+            <!-- Mock UI -->
+            <div class="space-y-4 animate-pulse">
+              <div class="flex gap-4">
+                <div class="w-1/3 h-32 rounded-lg bg-white/5"></div>
+                <div class="w-2/3 h-32 rounded-lg bg-white/5"></div>
+              </div>
+              <div class="h-8 w-1/2 rounded bg-white/5"></div>
+              <div class="h-4 w-full rounded bg-white/5"></div>
+              <div class="h-4 w-3/4 rounded bg-white/5"></div>
+              <div
+                class="h-40 w-full rounded-lg bg-gradient-to-br from-brand-primary/20 to-brand-accent/20 border border-white/5 flex items-center justify-center">
+                <span class="text-brand-light font-mono text-sm">&lt;DesignSystem /&gt;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- PROBLEMS -->
-  <section class="py-20 px-6 lg:px-12 bg-white">
-    <div class="max-w-7xl mx-auto text-center">
-      <h2 class="text-4xl font-bold text-navy mb-6">You Don’t Need More Tools</h2>
-      <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">You need fewer breaches. We fix the 20% that causes 80% of risk.</p>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
-          <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-4">
-            <i class="fas fa-cloud text-2xl text-red-500"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3 text-navy">Cloud Exposure</h3>
-          <p class="text-gray-600">Open buckets, weak IAM, shadow IT — fixed in 48 hrs.</p>
+  <!-- AI TRANSFORMATION -->
+  <section class="py-24 px-6 lg:px-12 bg-[#050511] relative overflow-hidden">
+    <div class="absolute inset-0 bg-brand-primary/5">
+      <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"></div>
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-16">
+      <div class="md:w-1/2">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 mb-6">
+          <i class="fas fa-robot text-purple-400 text-xs"></i>
+          <span class="text-purple-300 font-mono text-xs tracking-wider uppercase">AI-Powered Evolution</span>
         </div>
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
-          <div class="w-14 h-14 bg-purple-50 rounded-xl flex items-center justify-center mb-4">
-            <i class="fas fa-robot text-2xl text-purple-500"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3 text-navy">AI Pipeline Leaks</h3>
-          <p class="text-gray-600">Model data exfiltration, inference attacks — contained.</p>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Using AI, We <br><span class="gradient-text">Transform Your
+            Business</span></h2>
+        <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+          We don't just design; we engineer success. By leveraging cutting-edge Artificial Intelligence, we analyze
+          market trends
+          and user behaviors to create digital assets that predict success before launch.
+        </p>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
+              <i class="fas fa-brain text-brand-accent"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-white">Predictive Design</h4>
+              <p class="text-sm text-gray-500">AI-validated color palettes and layouts.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
+              <i class="fas fa-chart-line text-brand-primary"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-white">Data-Driven Growth</h4>
+              <p class="text-sm text-gray-500">Strategies backed by millions of data points.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="md:w-1/2 relative">
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-brand-primary to-brand-accent rounded-full blur-[100px] opacity-20 animate-pulse-slow">
         </div>
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
-          <div class="w-14 h-14 bg-orange-50 rounded-xl flex items-center justify-center mb-4">
-            <i class="fas fa-fire-extinguisher text-2xl text-orange-500"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3 text-navy">Incident Chaos</h3>
-          <p class="text-gray-600">No playbook? We contain in under 4 hours.</p>
+        <div
+          class="relative glass-effect p-2 rounded-2xl border border-white/10 rotate-2 hover:rotate-0 transition duration-500">
+          <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop"
+            alt="AI Transformation" class="rounded-xl shadow-2xl grayscale hover:grayscale-0 transition duration-500">
         </div>
       </div>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section id="services" class="py-20 px-6 lg:px-12 bg-white">
+  <section id="services" class="py-32 px-6 lg:px-12 relative overflow-hidden">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-4xl font-bold text-navy text-center mb-12">What We Do</h2>
+      <div class="text-center mb-20">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Crafting Digital <span
+            class="text-brand-primary">Masterpieces</span></h2>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg">We don't just "make websites". We build comprehensive digital
+          ecosystems.</p>
+      </div>
+
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm text-center">
-          <div class="w-16 h-16 bg-teal/10 rounded-xl flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-shield-alt text-2xl text-teal font-bold"></i>
+        <!-- Service 1 -->
+        <div class="glass-effect p-10 rounded-3xl card-hover group cursor-pointer relative overflow-hidden">
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-brand-primary/10 rounded-full blur-2xl group-hover:bg-brand-primary/20 transition-all">
           </div>
-          <h3 class="text-xl font-bold text-navy mb-3">Cloud Security Audit</h3>
-          <p class="text-gray-600 mb-6">Full AWS/Azure/GCP review. 10-page report. 48 hrs.</p>
-          <a href="#contact" class="text-teal hover:text-cyan-600 font-semibold inline-flex items-center gap-2 justify-center transition">
-            Get Audit <i class="fas fa-arrow-right text-sm"></i>
-          </a>
+          <div
+            class="w-16 h-16 bg-brand-primary/20 rounded-2xl flex items-center justify-center mb-8 border border-brand-primary/20">
+            <i class="fas fa-pen-nib text-3xl text-brand-light"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 group-hover:text-brand-light transition">Brand Identity</h3>
+          <p class="text-gray-400 mb-8 leading-relaxed">Logos, color systems, and brand voice guidelines that separate
+            you from the noise.</p>
+          <ul class="text-sm text-gray-500 space-y-3 mb-8">
+            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-primary"></i> Logo Design</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-primary"></i> Visual Systems</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-primary"></i> Brand Strategy</li>
+          </ul>
         </div>
-        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm text-center">
-          <div class="w-16 h-16 bg-purple-50 rounded-xl flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-brain text-2xl text-purple-500 font-bold"></i>
+
+        <!-- Service 2 -->
+        <div class="glass-effect p-10 rounded-3xl card-hover group cursor-pointer border-brand-primary/30 relative">
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 rounded-full blur-2xl group-hover:bg-brand-accent/20 transition-all">
           </div>
-          <h3 class="text-xl font-bold text-navy mb-3">AI Safety Review</h3>
-          <p class="text-gray-600 mb-6">Secure training, inference, and data flows.</p>
-          <a href="#contact" class="text-purple-500 hover:text-purple-400 font-semibold inline-flex items-center gap-2 justify-center transition">
-            Start Review <i class="fas fa-arrow-right text-sm"></i>
-          </a>
+          <div
+            class="w-16 h-16 bg-brand-accent/20 rounded-2xl flex items-center justify-center mb-8 border border-brand-accent/20">
+            <i class="fas fa-layer-group text-3xl text-brand-accent"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 group-hover:text-brand-accent transition">UI/UX Design</h3>
+          <p class="text-gray-400 mb-8 leading-relaxed">Interfaces so intuitive your users feel like they've used them
+            before. Obsessive attention to detail.</p>
+          <ul class="text-sm text-gray-500 space-y-3 mb-8">
+            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-accent"></i> Web & Mobile Apps</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-accent"></i> Wireframing</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-accent"></i> High-Fidelity Prototyping
+            </li>
+          </ul>
         </div>
-        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm text-center">
-          <div class="w-16 h-16 bg-orange-50 rounded-xl flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-bell text-2xl text-orange-500 font-bold"></i>
+
+        <!-- Service 3 -->
+        <div class="glass-effect p-10 rounded-3xl card-hover group cursor-pointer relative overflow-hidden">
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all">
           </div>
-          <h3 class="text-xl font-bold text-navy mb-3">Incident Response</h3>
-          <p class="text-gray-600 mb-6">24/7 retainer. Contain. Recover. Resume.</p>
-          <a href="#contact" class="text-orange-500 hover:text-orange-400 font-semibold inline-flex items-center gap-2 justify-center transition">
-            Get Retainer <i class="fas fa-arrow-right text-sm"></i>
-          </a>
+          <div
+            class="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-8 border border-blue-500/20">
+            <i class="fas fa-code text-3xl text-blue-400"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 group-hover:text-blue-400 transition">Development</h3>
+          <p class="text-gray-400 mb-8 leading-relaxed">Clean, performant code that scales. We build the engine that
+            powers your beautiful exterior.</p>
+          <ul class="text-sm text-gray-500 space-y-3 mb-8">
+            <li class="flex items-center gap-2"><i class="fas fa-check text-blue-500"></i> Next.js / React</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-blue-500"></i> CMS Integration</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-blue-500"></i> Performance Tuning</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HOW WE WORK -->
-  <section id="how" class="py-20 px-6 lg:px-12 bg-white text-navy">
+  <!-- PROCESS -->
+  <section id="process" class="py-24 px-6 lg:px-12 bg-[#050511] border-y border-white/5">
     <div class="max-w-7xl mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-12">How We Work</h2>
-      <div class="grid md:grid-cols-4 gap-8 relative">
-        <div class="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-teal/20"></div>
-        <div>
-          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-white shadow">1</div>
-          <h3 class="font-semibold text-xl mb-2">Discover</h3>
-          <p class="text-gray-600">30-min call. Map your risks.</p>
+      <h2 class="text-3xl font-bold mb-16 text-gray-200">The Blueprint</h2>
+      <div class="relative grid md:grid-cols-4 gap-8">
+        <div
+          class="hidden md:block absolute top-8 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-primary to-transparent opacity-30">
         </div>
-        <div>
-          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-white shadow">2</div>
-          <h3 class="font-semibold text-xl mb-2">Assess</h3>
-          <p class="text-gray-600">1-week deep dive.</p>
-        </div>
-        <div>
-          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-white shadow">3</div>
-          <h3 class="font-semibold text-xl mb-2">Fix</h3>
-          <p class="text-gray-600">You approve. We deploy.</p>
-        </div>
-        <div>
-          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-white shadow">4</div>
-          <h3 class="font-semibold text-xl mb-2">Protect</h3>
-          <p class="text-gray-600">Ongoing. Transparent.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- RESULTS -->
-  <section id="results" class="py-20 px-6 lg:px-12 bg-white">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-bold text-navy text-center mb-8">Results That Speak</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center">
-          <div class="mb-4 text-3xl text-emerald-500"><i class="fas fa-check-circle"></i></div>
-          <p class="text-2xl font-bold text-navy mb-2">98% Risk Down</p>
-          <p class="font-medium mb-1 text-gray-600">FinTech Scale-Up</p>
-          <p class="text-sm text-gray-500">Passed SOC 2 in 21 days.</p>
+        <div class="relative z-10 group">
+          <div
+            class="w-16 h-16 bg-[#0a0a1a] border border-white/10 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6 group-hover:border-brand-primary group-hover:text-brand-primary transition duration-300 shadow-xl">
+            1</div>
+          <h3 class="font-bold text-xl mb-2">Discovery</h3>
+          <p class="text-sm text-gray-500">We analyze your market, competitors, and goals.</p>
         </div>
-        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center">
-          <div class="mb-4 text-3xl text-amber-500"><i class="fas fa-dollar-sign"></i></div>
-          <p class="text-2xl font-bold text-navy mb-2">$2.1M Saved</p>
-          <p class="font-medium mb-1 text-gray-600">AI Health Startup</p>
-          <p class="text-sm text-gray-500">Blocked model poisoning attack.</p>
+        <div class="relative z-10 group">
+          <div
+            class="w-16 h-16 bg-[#0a0a1a] border border-white/10 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6 group-hover:border-brand-primary group-hover:text-brand-primary transition duration-300 shadow-xl">
+            2</div>
+          <h3 class="font-bold text-xl mb-2">Strategy</h3>
+          <p class="text-sm text-gray-500">We define the roadmap and visual direction.</p>
         </div>
-        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center">
-          <div class="mb-4 text-3xl text-cyan-500"><i class="fas fa-bolt"></i></div>
-          <p class="text-2xl font-bold text-navy mb-2">3.5 Hr Recovery</p>
-          <p class="font-medium mb-1 text-gray-600">E-Commerce Brand</p>
-          <p class="text-sm text-gray-500">Zero data loss from ransomware.</p>
+        <div class="relative z-10 group">
+          <div
+            class="w-16 h-16 bg-[#0a0a1a] border border-white/10 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6 group-hover:border-brand-primary group-hover:text-brand-primary transition duration-300 shadow-xl">
+            3</div>
+          <h3 class="font-bold text-xl mb-2">Creation</h3>
+          <p class="text-sm text-gray-500">Design and development in agile sprints.</p>
+        </div>
+        <div class="relative z-10 group">
+          <div
+            class="w-16 h-16 bg-[#0a0a1a] border border-white/10 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6 group-hover:border-brand-primary group-hover:text-brand-primary transition duration-300 shadow-xl">
+            4</div>
+          <h3 class="font-bold text-xl mb-2">Launch</h3>
+          <p class="text-sm text-gray-500">Deployment, QA, and market entry.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PRICING -->
-  <section id="pricing" class="py-20 px-6 lg:px-12 bg-white">
-    <div class="max-w-7xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-navy mb-6">Clear Pricing</h2>
-      <p class="text-lg text-gray-600 mb-12">No surprises. No contracts until you're ready.</p>
-      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-          <h3 class="text-xl font-bold mb-3 text-navy">Audit</h3>
-          <p class="text-2xl font-bold text-teal mb-3">AED 2,500</p>
-          <p class="text-gray-600 mb-6">One-time. Full report + fixes.</p>
-          <ul class="space-y-2 text-sm text-gray-600 mb-6">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> 48-hour turnaround</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> 10-page detailed report</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> Priority fixes included</li>
+  <section id="pricing" class="py-32 px-6 lg:px-12 bg-animated relative">
+    <!-- Orb light effect behind pricing -->
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-full max-h-[500px] bg-brand-primary/10 blur-[120px] rounded-full pointer-events-none">
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Investment Plans</h2>
+        <p class="text-gray-400">transparent pricing for transformative results.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <!-- Starter -->
+        <div
+          class="glass-effect p-8 rounded-3xl border border-white/5 hover:border-brand-light/30 transition duration-300 flex flex-col">
+          <h3 class="text-xl font-semibold text-gray-300 mb-2">Startup Identity</h3>
+          <div class="text-4xl font-bold text-white mb-6">$4,900</div>
+          <p class="text-sm text-gray-500 mb-8 border-b border-white/10 pb-8">Perfect for early-stage startups needing a
+            professional face.</p>
+          <ul class="space-y-4 mb-8 flex-1">
+            <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check text-brand-primary"></i>
+              Logo & Visual Identity</li>
+            <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check text-brand-primary"></i>
+              Brand Guidelines (PDF)</li>
+            <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check text-brand-primary"></i>
+              Business Card Design</li>
+            <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check text-brand-primary"></i>
+              Social Media Assets</li>
           </ul>
-          <a href="#contact" class="block text-center btn-modern border-2 border-teal text-teal py-2 rounded-lg font-semibold hover:bg-teal/10 transition">Get Started</a>
+          <a href="#contact"
+            class="btn-modern border border-white/20 hover:border-white block w-full py-4 rounded-xl text-center font-semibold transition">Get
+            Started</a>
         </div>
-        <div class="relative scale-100">
-          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-400 text-navy text-xs font-bold px-3 py-1 rounded-full shadow-sm">MOST POPULAR</div>
-          <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-            <h3 class="text-xl font-bold text-navy mb-3">Protect</h3>
-            <p class="text-2xl font-bold text-navy mb-2">AED 1,200<span class="text-base text-gray-600">/mo</span></p>
-            <p class="text-gray-600 mb-6">Ongoing + quarterly audits</p>
-            <ul class="space-y-2 text-sm text-gray-600 mb-6">
-              <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> Continuous monitoring</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> Quarterly security audits</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-teal"></i> Priority support</li>
+
+        <!-- Growth (Popular) -->
+        <div
+          class="p-[1px] rounded-3xl bg-gradient-to-b from-brand-primary to-brand-accent relative transform md:-translate-y-4">
+          <div
+            class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-accent text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg tracking-wide">
+            MOST POPULAR</div>
+          <div class="bg-[#0e0b1f] p-8 rounded-3xl h-full flex flex-col">
+            <h3 class="text-xl font-semibold text-brand-light mb-2">Digital Presence</h3>
+            <div class="text-4xl font-bold text-white mb-6">$9,500</div>
+            <p class="text-sm text-gray-400 mb-8 border-b border-white/10 pb-8">A complete website overhaul to convert
+              visitors into customers.</p>
+            <ul class="space-y-4 mb-8 flex-1">
+              <li class="flex items-center gap-3 text-sm text-white"><i class="fas fa-check text-brand-accent"></i>
+                <strong>Everything in Startup</strong>
+              </li>
+              <li class="flex items-center gap-3 text-sm text-white"><i class="fas fa-check text-brand-accent"></i>
+                Custom 5-Page Website</li>
+              <li class="flex items-center gap-3 text-sm text-white"><i class="fas fa-check text-brand-accent"></i> CMS
+                Integration</li>
+              <li class="flex items-center gap-3 text-sm text-white"><i class="fas fa-check text-brand-accent"></i>
+                Basic SEO Setup</li>
+              <li class="flex items-center gap-3 text-sm text-white"><i class="fas fa-check text-brand-accent"></i>
+                Copywriting Assistance</li>
             </ul>
-            <a href="#contact" class="block text-center btn-modern bg-gradient-to-r from-teal to-cyan-400 text-white py-2 rounded-lg font-semibold hover:shadow-md transition">Choose Plan</a>
+            <a href="#contact"
+              class="btn-modern bg-gradient-to-r from-brand-primary to-brand-accent block w-full py-4 rounded-xl text-center font-bold text-white shadow-lg hover:shadow-brand-primary/50 transition">Select
+              Plan</a>
           </div>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-          <h3 class="text-xl font-bold mb-3 text-navy">Enterprise</h3>
-          <p class="text-2xl font-bold text-purple-500 mb-3">Custom</p>
-          <p class="text-gray-600 mb-6">Dedicated team + SLAs</p>
-          <ul class="space-y-2 text-sm text-gray-600 mb-6">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-purple-500"></i> Dedicated security team</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-purple-500"></i> Custom SLAs</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-purple-500"></i> 24/7 incident response</li>
+
+        <!-- Enterprise -->
+        <div
+          class="glass-effect p-8 rounded-3xl border border-white/5 hover:border-brand-light/30 transition duration-300 flex flex-col">
+          <h3 class="text-xl font-semibold text-gray-300 mb-2">Full Transformation</h3>
+          <div class="text-4xl font-bold text-white mb-6">Custom</div>
+          <p class="text-sm text-gray-500 mb-8 border-b border-white/10 pb-8">For established brands needing a complete
+            market repositioning.</p>
+          <ul class="space-y-4 mb-8 flex-1">
+            <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check text-brand-primary"></i>
+              Full Brand Rebrand</li>
+            <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check text-brand-primary"></i>
+              Complex Web App Design</li>
+            <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check text-brand-primary"></i>
+              User Testing & Research</li>
+            <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check text-brand-primary"></i>
+              Ongoing Design Retainer</li>
           </ul>
-          <a href="#contact" class="block text-center btn-modern border-2 border-purple-500 text-purple-500 py-2 rounded-lg font-semibold hover:bg-purple-50 transition">Contact Sales</a>
+          <a href="#contact"
+            class="btn-modern border border-white/20 hover:border-white block w-full py-4 rounded-xl text-center font-semibold transition">Contact
+            Us</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="py-20 px-6 lg:px-12 bg-white text-navy">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Let's Secure Your Business</h2>
-      <p class="text-lg text-gray-600 mb-8">Free 30-minute call. No pitch. Just clarity.</p>
-      <form id="contact-form" action="https://formspree.io/f/your-email-here" method="POST" class="space-y-6 p-8 rounded-2xl text-left bg-gray-50 border border-gray-100">
+  <!-- CTA / CONTACT section -->
+  <section id="contact" class="py-24 px-6 lg:px-12 bg-white text-brand-dark">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">Ready to Defy Gravity?</h2>
+        <p class="text-gray-600 text-lg">Tell us about your project. We'll get back to you within 24 hours.</p>
+      </div>
+
+      <form id="contact-form" class="bg-gray-50 p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 space-y-6">
         <div class="grid md:grid-cols-2 gap-6">
-          <div>
-            <input type="text" name="name" placeholder="Name *" class="w-full p-4 rounded-lg bg-white border border-gray-200 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20 transition text-gray-900 placeholder-gray-400 text-lg" required />
+          <div class="space-y-2">
+            <label class="text-sm font-bold text-gray-700 ml-1">Name</label>
+            <input type="text" name="name" placeholder="John Doe"
+              class="w-full p-4 rounded-xl bg-white border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition text-gray-900"
+              required />
           </div>
-          <div>
-            <input type="email" name="email" placeholder="Email *" class="w-full p-4 rounded-lg bg-white border border-gray-200 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20 transition text-gray-900 placeholder-gray-400 text-lg" required />
+          <div class="space-y-2">
+            <label class="text-sm font-bold text-gray-700 ml-1">Email</label>
+            <input type="email" name="email" placeholder="john@company.com"
+              class="w-full p-4 rounded-xl bg-white border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition text-gray-900"
+              required />
           </div>
         </div>
-        <div>
-          <input type="text" name="company" placeholder="Company" class="w-full p-4 rounded-lg bg-white border border-gray-200 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20 transition text-gray-900 placeholder-gray-400 text-lg" />
-        </div>
-        <div>
-          <select name="service" class="w-full p-4 rounded-lg bg-white border border-gray-200 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20 transition text-gray-900 text-lg">
-            <option value="">Select Service (Optional)</option>
-            <option value="audit">Cloud Security Audit</option>
-            <option value="ai-safety">AI Safety Review</option>
-            <option value="incident-response">Incident Response</option>
-            <option value="protect">Ongoing Protection</option>
+
+        <div class="space-y-2">
+          <label class="text-sm font-bold text-gray-700 ml-1">Project Type</label>
+          <select name="service"
+            class="w-full p-4 rounded-xl bg-white border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition text-gray-900">
+            <option value="">Select a service...</option>
+            <option value="branding">Brand Identity</option>
+            <option value="website">Website Design & Dev</option>
+            <option value="webapp">Web Application</option>
+            <option value="full">Full Transformation</option>
           </select>
         </div>
-        <div>
-          <textarea name="message" placeholder="Your biggest concern..." class="w-full p-4 rounded-lg bg-white border border-gray-200 h-32 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20 transition text-gray-900 placeholder-gray-400 resize-none text-lg"></textarea>
+
+        <div class="space-y-2">
+          <label class="text-sm font-bold text-gray-700 ml-1">Project Details</label>
+          <textarea name="message" placeholder="Tell us about your goals, timeline, and budget..."
+            class="w-full p-4 rounded-xl bg-white border border-gray-200 h-32 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition text-gray-900 resize-none"></textarea>
         </div>
-        <button type="submit" class="w-full btn-modern bg-gradient-to-r from-teal to-cyan-400 text-white font-bold py-4 rounded-lg hover:shadow-md transition flex items-center justify-center gap-2 text-lg">
-          <i class="fas fa-calendar-check"></i> Book My Call
+
+        <button type="submit"
+          class="w-full btn-modern bg-brand-dark text-white font-bold py-5 rounded-xl hover:shadow-2xl transition flex items-center justify-center gap-2 text-lg">
+          <i class="fas fa-paper-plane text-brand-accent"></i> Send Inquiry
         </button>
-        <p class="text-xs text-gray-400 text-center">We'll respond within 2 hours during business hours</p>
+        <p class="text-xs text-gray-500 text-center mt-4">We respect your privacy. No spam, ever.</p>
       </form>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-white text-gray-700 py-12 px-6 lg:px-12 border-t">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 text-sm">
-      <div>
-        <div class="flex items-center space-x-3 mb-4">
-          <div class="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center">
-            <i class="fas fa-shield-alt text-teal text-sm font-bold"></i>
+  <footer class="bg-[#050511] text-gray-400 py-16 px-6 lg:px-12 border-t border-white/5">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 text-sm">
+      <div class="col-span-1 md:col-span-2">
+        <a href="#" class="flex items-center space-x-3 mb-6">
+          <div class="w-8 h-8 bg-brand-primary rounded flex items-center justify-center">
+            <i class="fas fa-cube text-white text-xs"></i>
           </div>
-          <span class="font-bold text-lg text-navy">NetCop</span>
-        </div>
-        <p class="text-gray-600 text-base">Cybersecurity & AI safety for growing businesses.</p>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-3 text-navy">Services</h4>
-        <ul class="space-y-2 text-gray-600">
-          <li><a href="#services" class="hover:text-teal transition">Cloud Audit</a></li>
-          <li><a href="#services" class="hover:text-teal transition">AI Safety</a></li>
-          <li><a href="#services" class="hover:text-teal transition">Incident Response</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-3 text-navy">Company</h4>
-        <ul class="space-y-2 text-gray-600">
-          <li><a href="#" class="hover:text-teal transition">About</a></li>
-          <li><a href="#" class="hover:text-teal transition">Blog</a></li>
-          <li><a href="#" class="hover:text-teal transition">Careers</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-3 text-navy">Connect</h4>
+          <span class="font-bold text-xl text-white">NetCop<span class="text-brand-accent">.</span></span>
+        </a>
+        <p class="text-gray-500 mb-6 max-w-sm leading-relaxed">
+          NetCop Digital is a premium branding and experience design agency. We help ambitious companies build digital
+          products that people love.
+        </p>
         <div class="flex space-x-4">
-          <a href="#" class="w-10 h-10 rounded-lg bg-gray-100 hover:bg-teal/20 flex items-center justify-center text-gray-600 hover:text-teal transition duration-300"><i class="fab fa-linkedin"></i></a>
-          <a href="#" class="w-10 h-10 rounded-lg bg-gray-100 hover:bg-teal/20 flex items-center justify-center text-gray-600 hover:text-teal transition duration-300"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="w-10 h-10 rounded-lg bg-gray-100 hover:bg-teal/20 flex items-center justify-center text-gray-600 hover:text-teal transition duration-300"><i class="fab fa-github"></i></a>
+          <a href="#"
+            class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-primary hover:text-white flex items-center justify-center transition duration-300"><i
+              class="fab fa-instagram"></i></a>
+          <a href="#"
+            class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-primary hover:text-white flex items-center justify-center transition duration-300"><i
+              class="fab fa-dribbble"></i></a>
+          <a href="#"
+            class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-primary hover:text-white flex items-center justify-center transition duration-300"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="#"
+            class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-primary hover:text-white flex items-center justify-center transition duration-300"><i
+              class="fab fa-behance"></i></a>
         </div>
-        <p class="text-gray-500 mt-4 text-xs">© 2025 NetCop Consultancy. All rights reserved.</p>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white mb-6 tracking-wide">Studio</h4>
+        <ul class="space-y-3">
+          <li><a href="#work" class="hover:text-brand-accent transition">Our Work</a></li>
+          <li><a href="#services" class="hover:text-brand-accent transition">Services</a></li>
+          <li><a href="#process" class="hover:text-brand-accent transition">Process</a></li>
+          <li><a href="#" class="hover:text-brand-accent transition">Careers</a> <span
+              class="text-[10px] bg-brand-primary/20 text-brand-primary px-2 py-0.5 rounded-full ml-1">Hiring</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white mb-6 tracking-wide">Legal</h4>
+        <ul class="space-y-3">
+          <li><a href="#" class="hover:text-brand-accent transition">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-brand-accent transition">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-brand-accent transition">Cookie Policy</a></li>
+        </ul>
       </div>
     </div>
-    <div class="max-w-7xl mx-auto mt-8 pt-8 border-t border-gray-100 text-center text-xs text-gray-500">
-      <a href="#" class="hover:text-teal transition">Privacy Policy</a> • 
-      <a href="#" class="hover:text-teal transition">Terms of Service</a>
+    <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 text-center text-xs text-gray-600">
+      <p>&copy; 2025 NetCop Digital Agency. Crafted with <i class="fas fa-heart text-brand-accent mx-1"></i> in the
+        Cloud.</p>
     </div>
   </footer>
 
-  <!-- Enhanced Scripts -->
   <script>
-    // Mobile Menu Toggle
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon = menuBtn.querySelector('i');
-
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
-      menuIcon.classList.toggle('fa-bars');
-      menuIcon.classList.toggle('fa-times');
+    // Header Scroll Effect
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('bg-[#050511]/90', 'backdrop-blur-xl', 'shadow-lg');
+        header.classList.remove('glass-effect');
+      } else {
+        header.classList.remove('bg-[#050511]/90', 'backdrop-blur-xl', 'shadow-lg');
+        header.classList.add('glass-effect');
+      }
     });
 
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        menuIcon.classList.add('fa-bars');
-        menuIcon.classList.remove('fa-times');
-      });
-    });
-
-    // Animated threat counter
-    let threatCount = 2847;
-    const counterElement = document.getElementById('threat-counter');
-
-    setInterval(() => {
-      threatCount += Math.floor(Math.random() * 3);
-      counterElement.textContent = threatCount.toLocaleString();
-    }, 5000);
-
-    // Scroll-based animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
+    // Intersection Observer for Animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.add('animate-fade-in-up');
+          entry.target.style.opacity = 1;
         }
       });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    // Observe all major sections
-    document.querySelectorAll('section > div').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(30px)';
-      el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-      observer.observe(el);
+    document.querySelectorAll('section > div').forEach(section => {
+      section.style.opacity = 0;
+      observer.observe(section);
     });
 
-    // Header scroll effect
-    let lastScroll = 0;
-    const header = document.querySelector('header');
-
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-
-      if (currentScroll > 100) {
-        header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
-      } else {
-        header.style.boxShadow = '';
-      }
-
-      lastScroll = currentScroll;
+    // Mobile Menu
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
     });
 
-    // Form validation and submission feedback
-    const contactForm = document.getElementById('contact-form');
-
-    contactForm.addEventListener('submit', (e) => {
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-      submitBtn.disabled = true;
-    });
-
-    // Smooth scroll with offset for fixed header
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          const headerOffset = 80;
-          const elementPosition = target.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
-      });
+    // Form Submission UI
+    document.getElementById('contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Sending...';
+      btn.classList.add('opacity-75', 'cursor-not-allowed');
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-check"></i> Sent Successfully';
+        btn.classList.remove('bg-brand-dark');
+        btn.classList.add('bg-green-500');
+        e.target.reset();
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove('bg-green-500', 'opacity-75', 'cursor-not-allowed');
+          btn.classList.add('bg-brand-dark');
+        }, 3000);
+      }, 1500);
     });
   </script>
 </body>
+
 </html>
